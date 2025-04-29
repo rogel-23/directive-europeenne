@@ -10,6 +10,21 @@ from sklearn.metrics import r2_score
 from sklearn.inspection import PartialDependenceDisplay
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
+# Interface Streamlit
+st.set_page_config(page_title="Outil Directive Européenne", page_icon="📊", layout="wide")
+
+st.markdown("## 🔒 Accès sécurisé")
+
+password = st.text_input("Veuillez entrer le mot de passe :", type="password")
+
+correct_password = "directive2025"
+
+if password != correct_password:
+    st.warning("⛔ Mot de passe incorrect ou vide.")
+    st.stop()
+else:
+    st.success("🔓 Accès autorisé.")
+
 
 st.title("📊 Analyse économétrique de la rémunération")
 
